@@ -11,6 +11,10 @@ h1, h2, h3, p {
       margin: 0;
 }
 
+.scroll-note {
+      color: #020024; 
+}
+
 /* Timeline container uses Flexbox for horizontal alignment */
 .timeline {
   display: flex;                  /* Use Flexbox to arrange cards in a row */
@@ -44,15 +48,15 @@ header > div {
 /* Style for the logo image inside the header */
 header img {
   /* Set a fixed height for the logo */
-  height: 40px;
+  height: 60px;
   /* Keep the logo's aspect ratio */
   width: auto;
-  /* Add some margin to the right of the logo */
-  margin-right: 0;              /* Remove right margin for centering */
-  padding: 30px;
+  /* Reduce padding to avoid pushing content down */
+  padding: 8px;
   display: block;
   margin-left: auto;            /* Center image horizontally */
   margin-right: auto;
+  margin-bottom: 24px;          /* Add space below the logo */
 }
 /* Header text styles */
 .header h1 {
@@ -108,6 +112,12 @@ header img {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+}
+
+/* Add some space between the icon and the heading text */
+.card h3 i {
+  margin-right: 8px; /* Space between icon and text */
+  vertical-align: middle; /* Align icon with text */
 }
 
 /* Card paragraph styles */
@@ -187,15 +197,69 @@ header img {
   display: block;
 }
 
-/* Responsive adjustments for small screens */
+/* Style for the "Learn More" link in each card */
+.learn-more-link {
+  display: inline-block;           /* Make the link behave like a button */
+  margin-top: 1rem;                /* Space above the link */
+  color: #ffffff;                  /* Intel blue */
+  background: #0070c5;             /* Light blue background */
+  padding: 6px 16px;               /* Padding for button feel */
+  border-radius: 6px;              /* Rounded corners */
+  text-decoration: none;           /* Remove underline */
+  font-weight: 600;                /* Make text bold */
+  font-size: 1rem;                 /* Easy to read */
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Change color on hover for interactivity */
+.learn-more-link:hover {
+  background: #020024;
+  color: #fff;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #15395b; /* Dark blue background */
+  color: #fff;               /* White text */
+  padding: 1rem 0;           /* Space above and below */
+  margin-top: 2rem;          /* Space above footer */
+  text-align: center;        /* Center all text */
+  font-size: 1rem;
+}
+
+/* Container for footer content */
+.footer-content {
+  display: flex;             /* Use flexbox for layout */
+  flex-direction: column;    /* Stack items vertically on small screens */
+  align-items: center;       /* Center items horizontally */
+  gap: 0.5rem;               /* Space between items */
+}
+
+/* Footer navigation links */
+.footer-nav {
+  margin-top: 0.3rem;
+}
+
+/* Style each link in the footer */
+.footer-nav a {
+  color: #e0eaf3;            /* Light blue for links */
+  text-decoration: none;     /* Remove underline */
+  margin: 0 0.7rem;          /* Space between links */
+  font-size: 0.97rem;
+}
+
+/* Add underline on hover for clarity */
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive: keep footer simple on small screens */
 @media (max-width: 700px) {
-  .timeline {
-    flex-direction: column;      /* Stack cards vertically on small screens */
-    align-items: center;
-    gap: 1rem;
+  .footer-content {
+    font-size: 0.95rem;
+    gap: 0.3rem;
   }
-  .card {
-    max-width: 95vw;
-    min-width: 0;
+  .footer-nav a {
+    margin: 0 0.4rem;
   }
 }
